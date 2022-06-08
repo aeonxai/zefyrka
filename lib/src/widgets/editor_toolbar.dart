@@ -264,9 +264,13 @@ Widget defaultToggleStyleButtonBuilder(
   return ZIconButton(
     highlightElevation: 0,
     hoverElevation: 0,
-    size: 32,
-    icon: Icon(icon, size: 18, color: iconColor),
-    fillColor: fillColor,
+    size: 22,
+    icon: Icon(
+      Icons.format_bold,
+      size: 18,
+      color: Theme.of(context).iconTheme.color,
+    ),
+    fillColor: Colors.transparent,
     onPressed: onPressed,
   );
 }
@@ -533,7 +537,7 @@ class ZIconButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     this.icon,
-    this.size = 40,
+    this.size = 22,
     this.fillColor,
     this.hoverElevation = 1,
     this.highlightElevation = 1,
@@ -542,12 +546,12 @@ class ZIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints.tightFor(width: size, height: size),
+      constraints: BoxConstraints.tightFor(width: 22, height: 22),
       child: RawMaterialButton(
         visualDensity: VisualDensity.compact,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
         padding: EdgeInsets.zero,
-        fillColor: fillColor,
+        fillColor: Colors.transparent,
         elevation: 0,
         hoverElevation: hoverElevation,
         highlightElevation: hoverElevation,
